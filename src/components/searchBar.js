@@ -2,6 +2,8 @@ import React from 'react'
 
 
 class SearchBar extends React.Component {
+
+    state = { term: '' }
     
     render() {
         return (
@@ -9,7 +11,10 @@ class SearchBar extends React.Component {
              <form className="ui form">
                  <div className="field">
                      <label>Image Search</label>
-                    <input type="text"></input>
+                    <input type="text" 
+                        value={ this.state.term }
+                        onChange={e => this.setState({ term: e.target.value })}>
+                    </input>
                  </div>
              </form>
          </div>   
